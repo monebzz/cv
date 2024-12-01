@@ -1,72 +1,195 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, #e3f2fd, #ffffff);
     color: #333;
+    line-height: 1.6;
 }
 
-/* Header Styles */
-h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin: 20px 0;
-}
-
-h2 {
-    color: #16a085;
-    margin-top: 30px;
-    border-bottom: 2px solid #16a085;
-    padding-bottom: 5px;
-}
-
-/* Image Styles */
-img {
-    display: block;
-    margin: 10px auto;
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Link Styles */
-a {
-    display: block;
+/* Header */
+header {
     text-align: center;
-    margin: 15px 0;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.subtitle {
+    color: #16a085;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background: #2980b9;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background: #1abc9c;
+    transform: translateY(-3px);
+}
+
+/* Main Content */
+main {
+    margin-top: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #16a085;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #16a085;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+p, ul {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li {
+    margin: 5px 0;
+}
+
+a {
     color: #2980b9;
     text-decoration: none;
-    font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
 a:hover {
     color: #1abc9c;
 }
-
-/* Paragraph Styles */
-p {
-    margin: 10px 20px;
-    padding: 10px;
-    background: #fff;
+/* General section styles */
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f9f9f9;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
 }
 
-/* Skill Section Styles */
-p b {
-    color: #e74c3c;
+section:hover {
+    transform: scale(1.02); /* Slightly enlarges the section on hover */
 }
 
-/* Contact Information */
-p:last-child {
+/* Headings with underline effect */
+h2 {
+    color: #16a085;
+    position: relative;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 50px; /* Default width */
+    height: 4px;
+    background: #16a085;
+    margin-top: 5px;
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out; /* Smooth resizing effect */
+}
+
+/* Hover effect for the entire section */
+section:hover h2::after {
+    width: 100%; /* Underline expands to full width when the section is hovered */
+}
+/* Header Styles */
+header {
     text-align: center;
-    background: none;
-    box-shadow: none;
-    font-weight: bold;
+    margin-bottom: 30px;
+    position: relative;
 }
 
-/* List Item */
-li {
-    margin: 10px 0;
+/* Animated Heading */
+h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly below */
+    animation: fadeInSlide 1.5s ease-in-out forwards; /* Animation */
+    animation-delay: 0.5s; /* Delay before the animation starts */
+}
+
+/* Subtitle */
+.subtitle {
+    color: #16a085;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 1s; /* Delays subtitle */
+}
+
+/* Animation Keyframes */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
